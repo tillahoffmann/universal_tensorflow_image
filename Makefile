@@ -4,6 +4,9 @@ IMAGE = universal-tensorflow
 CPU = docker run --rm -it $(IMAGE)
 GPU = nvidia-docker run --rm -it $(IMAGE)
 
+test : test-cpu test-gpu
+	# Run all tests as dependencies
+
 image : $(IMAGE)
 
 $(IMAGE) :
@@ -14,9 +17,6 @@ bash-cpu : $(IMAGE)
 
 bash-gpu : $(IMAGE)
 	$(GPU) bash
-
-test : test-cpu test-gpu
-	# Run all tests as dependencies
 
 test-cpu : $(IMAGE)
 	# Run the test script on the CPU
