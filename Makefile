@@ -20,8 +20,8 @@ bash-gpu : $(IMAGE)
 
 test-cpu : $(IMAGE)
 	# Run the test script on the CPU
-	! $(CPU) python3 test_tensorflow.py | grep GPU
+	! $(CPU) python3 test_tensorflow.py | grep device:GPU
 
 test-gpu : $(IMAGE)
 	# Run the test script on the GPU
-	$(GPU) python3 test_tensorflow.py | grep GPU
+	$(GPU) python3 test_tensorflow.py | grep device:GPU
