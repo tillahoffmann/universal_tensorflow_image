@@ -1,6 +1,6 @@
 .PHONY : image bash-cpu bash-gpu test test-cpu test-gpu
 
-IMAGE = universal-tensorflow
+IMAGE = universal-tensorflow-image
 CPU = docker run --rm -it $(IMAGE)
 GPU = nvidia-docker run --rm -it $(IMAGE)
 
